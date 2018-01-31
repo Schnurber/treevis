@@ -1,6 +1,8 @@
 # p5.treevis
 ![p5.treevis](p5treevis.png)
 
+With this library, one can create and customize a [treemap](https://en.wikipedia.org/wiki/Treemapping) or a [sunburst](https://en.wikipedia.org/wiki/Pie_chart#Ring_chart_/_Sunburst_chart_/_Multilevel_pie_chart) visualisation from any json object tree.
+
 ## Live examples
   + [Testbed with several examples in one large canvas](https://oth-aw.github.io/treevis/)
   + [Basic Sunburst example](https://oth-aw.github.io/treevis/examples/index_sunburst.html)
