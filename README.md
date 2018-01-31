@@ -3,6 +3,13 @@
 
 With this library, one can create and customize a [treemap](https://en.wikipedia.org/wiki/Treemapping) or a [sunburst](https://en.wikipedia.org/wiki/Pie_chart#Ring_chart_/_Sunburst_chart_/_Multilevel_pie_chart) visualisation from any json object tree.
 
+First, you can generate a json file containing a json tree out from any folder at your disk. Just scan it with my python script (use scandir.py in the scanner folder)
+
+Following command scans project directory ../ and write into file
+```shell
+python scandir.py ../ > ../examples/data/test.json
+```
+
 ## Live examples
   + [Testbed with several examples in one large canvas](https://oth-aw.github.io/treevis/)
   + [Basic Sunburst example](https://oth-aw.github.io/treevis/examples/index_sunburst.html)
@@ -15,7 +22,7 @@ Just include the scripts.
 ```html
 <script src="addons/p5.dom.min.js"></script>
 <script src="addons/p5.treevis.js"></script>
-```
+```html
 
 ## Basic usage
 This is a complete example for displaying and drawing with interaction
