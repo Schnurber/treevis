@@ -22,7 +22,7 @@ Just include the scripts.
 ```html
 <script src="addons/p5.dom.min.js"></script>
 <script src="addons/p5.treevis.js"></script>
-```html
+```
 
 ## Basic usage
 This is a complete example for displaying and drawing with interaction
