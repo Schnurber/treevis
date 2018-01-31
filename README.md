@@ -3,16 +3,16 @@
 
 ## Live examples
   + [Testbed with several examples in one large canvas](https://oth-aw.github.io/treevis/)
-  + [Basic Sunburst example](https://oth-aw.github.io/treevis/examples/ /index_sunburst.html)
+  + [Basic Sunburst example](https://oth-aw.github.io/treevis/examples/index_sunburst.html)
   + [Basic Treemap example](https://oth-aw.github.io/treevis/examples/)
   + [Treemap example without canvas](https://oth-aw.github.io/treevis/examples/index_div.html)
   
  
-## installation
+## Installation
 Just include the scripts.
 ```html
-  <script src="addons/p5.dom.min.js"></script>
-  <script src="addons/p5.treevis.js"></script>
+<script src="addons/p5.dom.min.js"></script>
+<script src="addons/p5.treevis.js"></script>
 ```
 
 ## Basic usage
@@ -61,7 +61,7 @@ function mouseClicked() {
   }
 }
 ```
-## p5.treevis doc
+## p5.treevis documentation
 
 #### createTreemap()
 ###### treemap = createTreemap(json_data, props)
@@ -70,6 +70,7 @@ Creates a new treemap visualisation
 ```javascript
 // Rounds corners
 treemap.setCorner(5);
+
 // Makes inset
 treemap.setInset(5);
 ```
@@ -79,14 +80,43 @@ Creates a new sunburst visualisation
 ```javascript
 // Sets a different angle and draws a full circle
 sunburst.setAngle(90, 360);
+// Sets text invisible
+sunburst.setTextVisible(false);
 ```
 this works on both treemaps and sundbursts
 
 ```javascript
 // callback function
 treevis.onSelected((v, name) => console.log("Selected: "+name));
+
 // Sets size and position
 treevis.setBounds(100,100,400,400);
+
 // Customize fill
-treemap.onFill((level, maxLevel) => fill(color(237, (255 - level / maxLevel * 255) * 2 / 3, 255)));
+treevis.onFill((level, maxLevel) => fill(color(237, (255 - level / maxLevel * 255) * 2 / 3, 255)));
+
+// Navigates in at mouseclick
+function mouseClicked() {
+    treevis.select(mouseX, mouseY);
+}
+
+//navigates out at mouseclick
+function mouseClicked() {
+  treevis.up(mouseX, mouseY);
+}
+
+//Navigates up without test if position is inside visualisation
+treevis.up();
+
+// Custom function for building label out of name property
+treevis.onGetLabel(name => name.substring(name.lastIndexOf("-") + 1));
+
+// Interaction off, no navigation in or out
+treevis.setInteraction(false);
+
+// Custom font size
+treevis.setTextStyle(14);
+
+// Custom font size and type
+treevis.setTextStyle(14, 'Times');
 ```
