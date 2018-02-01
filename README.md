@@ -98,7 +98,8 @@ Sets text invisible
 ```javascript
 sunburst.setTextVisible(false);
 ```
-This works on both treemaps and sundbursts:
+
+## This works on both treemaps and sundbursts:
 
 Callback function
 ```javascript
