@@ -43,7 +43,7 @@ function setup() {
   treevis.draw();
 }
 
-function mouseClicked() {
+function mousePressed() {
   treevis.select(mouseX, mouseY);
   treevis.draw(false);
 }

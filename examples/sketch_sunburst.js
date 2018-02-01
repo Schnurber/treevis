@@ -32,7 +32,7 @@ function draw() {
   treevis.draw();
 }
 
-function mouseClicked() {
+function mousePressed() {
   if (mouseButton == RIGHT) {
     treevis.up();
   } else {
