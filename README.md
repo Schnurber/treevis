@@ -76,56 +76,80 @@ function mouseClicked() {
 ###### treemap = createTreemap(json_data, props)
 Creates a new treemap visualisation
 
+Rounds corners
 ```javascript
-// Rounds corners
 treemap.setCorner(5);
+```
 
-// Makes inset
+Makes inset
+```javascript
 treemap.setInset(5);
 ```
+
 #### createSunburst()
 ###### sunburst = createSunburst(json_data, props)
 Creates a new sunburst visualisation
+
+Sets a different angle and draws a full circle
 ```javascript
-// Sets a different angle and draws a full circle
 sunburst.setAngle(90, 360);
-// Sets text invisible
+```
+Sets text invisible
+```javascript
 sunburst.setTextVisible(false);
 ```
-this works on both treemaps and sundbursts
+This works on both treemaps and sundbursts:
 
+Callback function
 ```javascript
-// callback function
 treevis.onSelected((v, name) => console.log("Selected: "+name));
+```
 
-// Sets size and position
+Sets size and position
+```javascript
 treevis.setBounds(100,100,400,400);
+```
 
-// Customize fill
+Customize fill
+```javascript
 treevis.onFill((level, maxLevel) => fill(color(237, (255 - level / maxLevel * 255) * 2 / 3, 255)));
+```
 
-// Navigates in at mouseclick
-function mouseClicked() {
+Navigates in when mouse is pressed
+```javascript
+function mousePressed() {
     treevis.select(mouseX, mouseY);
 }
+```
 
-//navigates out at mouseclick
+Navigates out when mouse is pressed
+```javascript
 function mouseClicked() {
   treevis.up(mouseX, mouseY);
 }
+```
 
-//Navigates up without test if position is inside visualisation
+Navigates up without test if pressed mouse position is inside visualisation
+```javascript
 treevis.up();
+```
 
-// Custom function for building label out of name property
+Custom function for building label out of name property
+```javascript
 treevis.onGetLabel(name => name.substring(name.lastIndexOf("-") + 1));
+```
 
-// Interaction off, no navigation in or out
+Interaction off, no navigation in or out
+```javascript
 treevis.setInteraction(false);
+```
 
-// Custom font size
+Custom font size
+```javascript
 treevis.setTextStyle(14);
+```
 
-// Custom font size and type
+Custom font size and type
+```javascript
 treevis.setTextStyle(14, 'Times');
 ```
