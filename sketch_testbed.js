@@ -81,7 +81,7 @@ function draw() {
   for (let tv of vis) tv.draw();
 }
 
-function mouseClicked() {
+function mousePressed() {
   if (mouseButton == RIGHT) {
     for (let tv of vis) tv.up(mouseX, mouseY);
   } else {
