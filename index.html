@@ -1,7 +1,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>Tree Visualisation with p5.js</title>
   <script src="p5.min.js"></script>
   <style type="text/css">
@@ -34,7 +36,7 @@
 </head>
 
 <body oncontextmenu="return false;">
-<div id="container" >
+<div id="container" class="container">
 	<h1 class="centered">Tree Visualisation with p5.js</h1>
 	<div>
 <p>
@@ -42,12 +44,12 @@ Testbed of the treevis addon for <a href="https://p5js.org/" target="_blank" tit
 To interact with the visualisations simply click on them to choose a deeper level of the tree. Go back by right-click or pressing the button (all up).
 </p>
 <p>
-<a href="https://github.com/oth-aw/treevis">Go back to Github repository</a>
+<a href="https://github.com/oth-aw/treevis"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Go back to Github repository</a>
 </p>
 	</div>
 	<div class="centered">
-		<button id="allup">all up</button>
-		<div id="info">Nothing selected</div>
+		<button id="allup" class="btn btn-primary">all up</button>
+		<div id="info" class="panel panel-default">Nothing selected</div>
 	</div>
 </div>
 </body>
