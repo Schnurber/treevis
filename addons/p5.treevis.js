@@ -448,7 +448,7 @@ var Sunburst = function (_Treevis) {
 				var click_level = 2 + parseInt(abs(m_dist / this.__stp__ * 2));
 				if (click_level === level) {
 					var selang = (360 + degrees(atan2(dy, dx))) % 360;
-					if (selang >= angle1 && selang <= angle1 + angle2) {
+					if (selang >= (360 + angle1) % 360 && selang <= (360 + angle1) % 360 + (360 + angle2) % 360) {
 						this.__action__ = false;
 						this.__selected__(v, name, angle1, angle2, level, this.__maxLevel__, numChildren);
 
