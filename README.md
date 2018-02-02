@@ -41,9 +41,9 @@ Example:
 }
 ```
 
-The property names <Name>, <Value> and <Children> must be specified in a parameter-object (see example code below).
+The property names &lt;Name&gt;, &lt;Value&gt; and &lt;Children&gt; must be specified in a parameter-object (see example code below).
 
-If you want, you can generate a json file containing a json tree out from any folder at your disk. Just scan it with my python script (use scandir.py in the scanner folder)
+If you want, you can generate a json file containing a json tree out from any folder at your disk. Just scan it with my python script (use [scandir.py](scanner/scandir.py) in the scanner folder)
 
 Following command scans project directory ../ and write into file
 ```shell
