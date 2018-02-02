@@ -1,34 +1,34 @@
 "use strict";
 
 (function () {
-  /**
-   * Treevis
-   * @author     Dieter Meiller <d.meiller@oth-aw.de>
-   * @version    1.0
-   *
-   */
+	/**
+  * Treevis
+  * @author     Dieter Meiller <d.meiller@oth-aw.de>
+  * @version    1.0
+  *
+  */
 
-  /**
-   * Creates a Treemap visualisation object.
-   *
-   * @param      {object}   json_data  The json data
-   * @param      {object}   props      The properties
-   * @return     {Treemap}  The new Treemap instance
-   */
-  p5.prototype.createTreemap = function (json_data, props) {
-    return new Treemap(json_data, props);
-  };
+	/**
+  * Creates a Treemap visualisation object.
+  *
+  * @param      {object}   json_data  The json data
+  * @param      {object}   props      The properties
+  * @return     {Treemap}  The new Treemap instance
+  */
+	p5.prototype.createTreemap = function (json_data, props) {
+		return new Treemap(json_data, props);
+	};
 
-  /**
+	/**
   * Creates a Sunburst visualisation object.
   *
   * @param      {object}   json_data  The json data
   * @param      {object}   props      The properties
   * @return     {Sunburst}  The new Sunburst instance
   */
-  p5.prototype.createSunburst = function (json_data, props) {
-    return new Sunburst(json_data, props);
-  };
+	p5.prototype.createSunburst = function (json_data, props) {
+		return new Sunburst(json_data, props);
+	};
 })();
 "use strict";
 
@@ -50,7 +50,10 @@ var Treevis = function () {
     this.__maxLevel__ = 0;
     this.__parents__ = [];
     this.__action__ = false;
-    this.__selection__ = { x: 0, y: 0 };
+    this.__selection__ = {
+      x: 0,
+      y: 0
+    };
     this.__is_interactive__ = true;
     this.__textSize__ = 12;
     this.__textFont__ = "Arial";
@@ -66,6 +69,12 @@ var Treevis = function () {
     key: "scan_tree",
     value: function scan_tree(v, level) {
       if (level > this.__maxLevel__) this.__maxLevel__ = level;
+      if (v[this.__props__.value] === undefined) {
+        v[this.__props__.value] = 0;
+      }
+      if (v[this.__props__.children] === undefined) {
+        v[this.__props__.children] = [];
+      }
       var children = v[this.__props__.children];
       var numChildren = children.length;
       var fSize = 0;
@@ -99,11 +108,20 @@ var Treevis = function () {
   }, {
     key: "onGetLabel",
     value: function onGetLabel(func) {
-      this.__label__ = func;
+      this.__getLabel__ = func;
     }
   }, {
     key: "__label__",
     value: function __label__(name) {
+      if (name !== undefined) {
+        return this.__getLabel__(name);
+      } else {
+        return "";
+      }
+    }
+  }, {
+    key: "__getLabel__",
+    value: function __getLabel__(name) {
       return name.substring(name.lastIndexOf("/") + 1);
     }
 
@@ -223,7 +241,12 @@ var Treevis = function () {
   }, {
     key: "setBounds",
     value: function setBounds(xpos, ypos, w, h) {
-      this.__dimensions__ = { x: xpos, y: ypos, width: w, height: h };
+      this.__dimensions__ = {
+        x: xpos,
+        y: ypos,
+        width: w,
+        height: h
+      };
     }
   }]);
 

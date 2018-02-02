@@ -3,7 +3,47 @@
 
 With this library, one can create and customize a [treemap](https://en.wikipedia.org/wiki/Treemapping) or a [sunburst](https://en.wikipedia.org/wiki/Pie_chart#Ring_chart_/_Sunburst_chart_/_Multilevel_pie_chart) visualisation from any json object tree.
 
-First, you can generate a json file containing a json tree out from any folder at your disk. Just scan it with my python script (use scandir.py in the scanner folder)
+The json object tree should be an object with the following structure:
+
+```json
+<Node> ::= 
+{
+   <Name> : string,
+   <Value> : number,
+   <Children> : [ <Node>, ... ]
+}
+```
+
+For leaf nodes, <Children> is optional. For parent nodes, <Name> and <Value> are optional.
+
+Example:
+
+```json
+{
+   "children":[
+      {
+         "name":"a",
+         "size":1
+      },
+      {
+         "children":[
+            {
+               "name":"b",
+               "size":2
+            },
+            {
+               "name":"c",
+               "size":3
+            }
+         ]
+      }
+   ]
+}
+```
+
+The property names <Name>, <Value> and <Children> must be specified in a parameter-object (see example code below).
+
+If you want, you can generate a json file containing a json tree out from any folder at your disk. Just scan it with my python script (use scandir.py in the scanner folder)
 
 Following command scans project directory ../ and write into file
 ```shell

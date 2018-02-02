@@ -28,6 +28,12 @@ class Treevis {
 
   scan_tree(v, level) {
     if (level > this.__maxLevel__) this.__maxLevel__ = level;
+    if (v[this.__props__.value] === undefined ) {
+      v[this.__props__.value] = 0;
+    }
+    if (v[this.__props__.children] === undefined ) {
+      v[this.__props__.children] = [];
+    }
     var children = v[this.__props__.children];
     var numChildren = children.length;
     var fSize = 0;
@@ -55,9 +61,16 @@ class Treevis {
    * @param      {<type>}  func    The function
    */
   onGetLabel(func) {
-    this.__label__ = func;
+    this.__getLabel__ = func;
   }
   __label__(name) {
+    if (name !== undefined) {
+      return this.__getLabel__(name);
+    } else {
+      return "";
+    }
+  }
+  __getLabel__(name) {
     return name.substring(name.lastIndexOf("/") + 1);
   }
 
