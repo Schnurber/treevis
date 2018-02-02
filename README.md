@@ -5,7 +5,7 @@ With this library, one can create and customize a [treemap](https://en.wikipedia
 
 The json object tree should be an object with the following structure:
 
-```json
+```EBNF
 <Node> ::= 
 {
    <Name> : string,
@@ -14,7 +14,7 @@ The json object tree should be an object with the following structure:
 }
 ```
 
-For leaf nodes, <Children> is optional. For parent nodes, <Name> and <Value> are optional.
+For leaf nodes, &lt;Children&gt; is optional. For parent nodes, &lt;Name&gt; and &lt;Value&gt; are optional.
 
 Example:
 
