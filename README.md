@@ -51,10 +51,10 @@ python scandir.py ../ > ../examples/data/test.json
 ```
 
 ## Live examples
-  + [Testbed with several examples in one large canvas](https://oth-aw.github.io/treevis/)
-  + [Basic Sunburst example](https://oth-aw.github.io/treevis/examples/index_sunburst.html)
-  + [Basic Treemap example](https://oth-aw.github.io/treevis/examples/)
-  + [Treemap example without canvas](https://oth-aw.github.io/treevis/examples/index_div.html)
+  + [Testbed with several examples in one large canvas](https://schnurber.github.io/treevis/)
+  + [Basic Sunburst example](https://schnurber.github.io/treevis/examples/index_sunburst.html)
+  + [Basic Treemap example](https://schnurber.github.io/treevis/examples/)
+  + [Treemap example without canvas](https://schnurber.github.io/treevis/examples/index_div.html)
   
  
 ## Installation
