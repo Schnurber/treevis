@@ -11,9 +11,7 @@ gulp.task("default", function () {
 	 "Treemap.js",
 	 "Sunburst.js",
   	])
-  .pipe(babel({
-          presets: ['babel-preset-es2015']
-    }))
+  .pipe(babel())
     .pipe(concat("p5.treevis.js"))
     .pipe(gulp.dest("../addons"))
     .pipe(minify());
